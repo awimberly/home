@@ -31,7 +31,9 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
     }
   }, [link]);
 
-
+  const imgStyle = {
+    borderRadius: "30px"
+  }
 
   return (
     <Jumbotron id="aboutme" className="m-0">
@@ -39,11 +41,12 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
         <div className="col-5 d-none d-lg-block align-self-center">
           {showPic && (
             <img
-              className="border border-secondary rounded-circle"
+              className="border border-secondary"
               src={profilePicUrl}
               alt="profilepicture"
               width={imgSize}
               height={imgSize}
+              style={imgStyle}
             />
           )}
         </div>
