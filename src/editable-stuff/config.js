@@ -50,7 +50,7 @@ const about = {
   imageLink: "", //require("../editable-stuff/selfportrait.png"),
   imageSize: 375,
   message:
-    "My name is Arthur Wimberly. I'm software developer with over 20 years of experience. I have a passion for technology and a strong desire to make a positive impact on every project and team I'm a part of. I'm always looking for new challenges and opportunities to learn and grow as a developer.",
+    "My name is Arthur Wimberly. I'm a software developer with over 20 years of experience. I have a passion for technology and a strong desire to make a positive impact on every project and team I'm a part of. I'm always looking for new challenges and opportunities to learn and grow as a developer.",
   resume: "https://docs.google.com/document/d/e/2PACX-1vTkR5UpbzNYOagP0wKvcqdU4_Eix0JX0IP3_0u_KtJKJNMD9pqAb27jrr81ROeXoQ/pub",
 };
 
@@ -104,7 +104,7 @@ const getInTouch = {
 };
 
 const experiences = {
-  show: true,
+  show: false,
   heading: "Experiences",
   data: [
     {
