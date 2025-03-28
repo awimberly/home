@@ -47,7 +47,7 @@ const mainBody = {
 const about = {
   show: true,
   heading: "About Me",
-  imageLink: require("../editable-stuff/selfportrait.png"),
+  imageLink: "", //require("../editable-stuff/selfportrait.png"),
   imageSize: 375,
   message:
     "My name is Arthur Wimberly. I'm software developer with over 20 years of experience in the field. I have a passion for technology and a strong desire to make a positive impact in the world through my work. I am always looking for new challenges and opportunities to learn and grow as a developer. In my free time, I enjoy exploring new technologies, working on personal projects, and spending time with my family and friends.",
