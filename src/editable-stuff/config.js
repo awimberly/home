@@ -50,7 +50,7 @@ const about = {
   imageLink: "", //require("../editable-stuff/selfportrait.png"),
   imageSize: 375,
   message:
-    "My name is Arthur Wimberly. I'm software developer with over 20 years of experience in the field. I have a passion for technology and a strong desire to make a positive impact in the world through my work. I am always looking for new challenges and opportunities to learn and grow as a developer. In my free time, I enjoy exploring new technologies, working on personal projects, and spending time with my family and friends.",
+    "My name is Arthur Wimberly. I'm software developer with over 20 years of experience. I have a passion for technology and a strong desire to make a positive impact on every project and team I'm a part of. I'm always looking for new challenges and opportunities to learn and grow as a developer.",
   resume: "https://docs.google.com/document/d/e/2PACX-1vTkR5UpbzNYOagP0wKvcqdU4_Eix0JX0IP3_0u_KtJKJNMD9pqAb27jrr81ROeXoQ/pub",
 };
 
@@ -59,37 +59,14 @@ const about = {
 //      i.e: reposLength: 0,
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
-const repos = {
+/* const repos = {
   show: true,
   heading: "Recent Projects",
   gitHubUsername: "awimberly", //i.e."johnDoe12Gh"
   reposLength: 4,
   specificRepos: [],
 };
-
-// Leadership SECTION
-const leadership = {
-  show: false,
-  heading: "Leadership",
-  message:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae auctor eu augue ut lectus arcu bibendum at varius. Libero justo laoreet sit amet cursus sit amet. Imperdiet dui accumsan sit amet nulla facilisi morbi. At auctor urna nunc id. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Et magnis dis parturient montes nascetur ridiculus mus mauris. In nisl nisi scelerisque eu ultrices vitae auctor. Mattis nunc sed blandit libero volutpat sed cras ornare. Pulvinar neque laoreet suspendisse interdum consectetur libero.",
-  images: [
-    { 
-      img: require("../editable-stuff/selfportrait.png"), 
-      label: "First slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
-    },
-    { 
-      img: require("../editable-stuff/selfportrait.png"), 
-      label: "Second slide label", 
-      paragraph: "Nulla vitae elit libero, a pharetra augue mollis interdum." 
-    },
-  ],
-  imageSize: {
-    width:"615",
-    height:"450"
-  }
-};
+*/
 
 // SKILLS SECTION
 const skills = {
@@ -97,11 +74,12 @@ const skills = {
   heading: "Skills",
   hardSkills: [
     { name: "C#", value: 90 },
-    { name: "SQL", value: 75 },
+    { name: "SQL", value: 85 },
     { name: "Javscript", value: 85 },
-    { name: "ReactJS", value: 65 },
-    { name: "JavaScript", value: 90 },
-    { name: "React", value: 65 },
+    { name: "ReactJS", value: 60 },
+    { name: "ASP.NET", value: 90 },
+    { name: "MVC", value: 85 },
+    { name: "Web API", value: 85 },
     { name: "HTML/CSS", value: 55 },
     { name: "C#", value: 80 },
   ],
@@ -126,7 +104,7 @@ const getInTouch = {
   email: "arthur.wimberly@gmail.com",
 };
 
-const experiences = {
+/* const experiences = {
   show: false,
   heading: "Experiences",
   data: [
@@ -142,10 +120,11 @@ const experiences = {
     },
   ]
 }
+*/
 
 // Blog SECTION
-// const blog = {
-//   show: false,
-// };
+const blog = {
+  show: false,
+};
 
-export { navBar, mainBody, about, repos, skills, leadership, getInTouch, experiences };
+export { navBar, mainBody, about, skills , getInTouch, blog };
