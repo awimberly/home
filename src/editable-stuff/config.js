@@ -59,14 +59,13 @@ const about = {
 //      i.e: reposLength: 0,
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
-/* const repos = {
-  show: true,
+const repos = {
+  show: false,
   heading: "Recent Projects",
   gitHubUsername: "awimberly", //i.e."johnDoe12Gh"
   reposLength: 4,
   specificRepos: [],
 };
-*/
 
 // SKILLS SECTION
 const skills = {
@@ -104,8 +103,8 @@ const getInTouch = {
   email: "arthur.wimberly@gmail.com",
 };
 
-/* const experiences = {
-  show: false,
+const experiences = {
+  show: true,
   heading: "Experiences",
   data: [
     {
@@ -120,11 +119,10 @@ const getInTouch = {
     },
   ]
 }
-*/
 
 // Blog SECTION
 const blog = {
-  show: false,
+  show: true,
 };
 
-export { navBar, mainBody, about, skills , getInTouch, blog };
+export { navBar, mainBody, about, repos, skills , getInTouch, experiences, blog };
