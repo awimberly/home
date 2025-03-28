@@ -9,7 +9,7 @@ const mainBody = {
   firstName: "Arthur",
   middleName: "",
   lastName: "Wimberly",
-  message: "What we want is very possible. We just have to believe.",
+  message: "'Anything is possible if you just believe. But if you want to start believing, start with yourself. - Dulara Perera'",
   icons: [
     {
       image: "fa-github",
