@@ -9,7 +9,7 @@ const mainBody = {
   firstName: "Arthur",
   middleName: "",
   lastName: "Wimberly",
-  message: "Thanks for stopping by...",
+  message: "What we want is very possible. We just have to believe.",
   icons: [
     {
       image: "fa-github",
