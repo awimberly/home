@@ -9,7 +9,7 @@ const mainBody = {
   firstName: "Arthur",
   middleName: "",
   lastName: "Wimberly",
-  message: " Passionate about changing the world with technology. ",
+  message: " Excited for new opportunities. ",
   icons: [
     {
       image: "fa-github",
@@ -55,7 +55,7 @@ const about = {
 };
 
 // PROJECTS SECTION
-// Setting up project lenght will automatically fetch your that number of recently updated projects, or you can set this field 0 to show none.
+// Setting up project length will automatically fetch your that number of recently updated projects, or you can set this field 0 to show none.
 //      i.e: reposLength: 0,
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
