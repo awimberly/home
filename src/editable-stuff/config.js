@@ -51,7 +51,7 @@ const about = {
   imageSize: 350,
   message:
     "I'm a full stack developer with deep experience in .NET, JavaScript, SQL Server, and a long track record of building everything from enterprise systems to internal tools. I enjoy solving tough problems, learning new technologies, and helping teams deliver solid, scalable software. I'm currently looking for new opportunities where I can contribute, grow, and build things that matter.",
-  resume: "https://docs.google.com/document/d/e/2PACX-1vTkR5UpbzNYOagP0wKvcqdU4_Eix0JX0IP3_0u_KtJKJNMD9pqAb27jrr81ROeXoQ/pub",
+  resume: "https://docs.google.com/document/d/e/2PACX-1vRITxIro4empF_2Du4T7tp9m954I7ZwQbhE_WGbknZlgekWiqn7BsKAvRruMpw7kg/pub",
 };
 
 // PROJECTS SECTION
