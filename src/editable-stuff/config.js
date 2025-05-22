@@ -60,11 +60,11 @@ const about = {
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
 const repos = {
-  show: true,
-  heading: "Projects",
-  gitHubUsername: "awimberly",
-  reposLength: 0,
-  specificRepos: ["snake-game"],
+  show: false,
+  heading: "Recent Projects",
+  gitHubUsername: "awimberly", //i.e."johnDoe12Gh"
+  reposLength: 4,
+  specificRepos: [],
 };
 
 // SKILLS SECTION
