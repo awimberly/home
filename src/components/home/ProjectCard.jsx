@@ -38,17 +38,30 @@ const ProjectCard = ({ value }) => {
 };
 
 const CardButtons = ({ svn_url }) => {
+  // Check if this is the snake-game repository
+  const isSnakeGame = svn_url.toLowerCase().includes('snake-game');
+  
   return (
-    <div className="d-grid gap-2 d-md-block">
+    <div className="d-flex flex-wrap gap-2 justify-content-start align-items-center">
       <a
         href={`${svn_url}/archive/master.zip`}
-        className="btn btn-outline-secondary mx-2"
+        className="btn btn-outline-secondary"
       >
         <i className="fab fa-github" /> Clone Project
       </a>
-      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary mx-2">
+      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary">
         <i className="fab fa-github" /> Repo
       </a>
+      {isSnakeGame && (
+        <a 
+          href="https://awimberly.github.io/snake-game/" 
+          target="_blank" 
+          className="btn btn-primary"
+          rel="noopener noreferrer"
+        >
+          <i className="fas fa-play" /> Play Game
+        </a>
+      )}
     </div>
   );
 };
