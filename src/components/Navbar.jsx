@@ -85,4 +85,15 @@ const Navigation = React.forwardRef((props, ref) => {
           {skills.show && (
             <NavLink
               className="nav-item lead"
-              h
+              href={process.env.PUBLIC_URL + "/#skills"}
+            >
+              Skills
+            </NavLink>
+          )}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+});
+
+export default Navigation;
