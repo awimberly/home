@@ -7,19 +7,19 @@ const Blog = () => {
   return (
     <div className="container-lg mt-5 bg-blue">
       <h1 className="text-center">Blogs</h1>
-      {bloglist.map((value, index) => (
+      {bloglist.map((value) => (
         <BlogCard
-          key={index}
+          key={value.slug}
           title={value.title}
           description={value.description}
-          index={index}
+          slug={value.slug}
         />
       ))}
     </div>
   );
 };
 
-const BlogCard = ({ index, title, description }) => {
+const BlogCard = ({ slug, title, description }) => {
   return (
     <div className="m-5">
       <div className="row">
@@ -30,9 +30,7 @@ const BlogCard = ({ index, title, description }) => {
           <div>
             <h1>{title}</h1>
             <p className="lead">{description}</p>
-            <Link to={`${process.env.PUBLIC_URL}/blog/${index}`}>
-              Read more...
-            </Link>
+            <Link to={`/blog/${slug}`}>Read more...</Link>
           </div>
         </div>
       </div>
@@ -41,8 +39,5 @@ const BlogCard = ({ index, title, description }) => {
   );
 };
 
-// ✅ Default export for main Blog component
 export default Blog;
-
-// ✅ Named export if you still use BlogBuilder elsewhere
 export { BlogBuilder };

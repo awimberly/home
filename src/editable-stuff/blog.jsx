@@ -1,8 +1,10 @@
 import { BlogBuilder } from "../components/blog/BlogBuilder";
+
 const bloglist = [];
 
 const refactoringMe = new BlogBuilder({
   title: "Refactoring Me: A Developer’s Journey Through a Full-Stack Reboot",
+  slug: "refactoring-me", // ✅ this enables clean routing
   image: "assets/images/posts/refactoring-me/header.png",
   description:
     "The start of 2025 was a turning point — laid off for the first time after 20+ years. This post begins my journey rebuilding myself as a modern full-stack developer.",
