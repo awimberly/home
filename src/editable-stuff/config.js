@@ -123,10 +123,7 @@ const experiences = {
 
 // Blog SECTION
 const blog = {
-  show: true,
-  heading: "Blog",
-  description:
-    "I love writing about technology, software development, and my personal experiences. Check out my latest blog posts below.",
+  show: false,
 };
 
 export {
