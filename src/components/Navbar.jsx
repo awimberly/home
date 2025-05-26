@@ -16,7 +16,7 @@ const Navigation = React.forwardRef((props, ref) => {
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      if (!navbarDimensions || !ref.current) return;
+      if (!navbarDimensions || !ref || !ref.current) return;
 
       currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
         ? setIsTop(true)
@@ -27,7 +27,8 @@ const Navigation = React.forwardRef((props, ref) => {
   );
 
   React.useEffect(() => {
-    if (!navbarDimensions) return;
+    if (!navbarDimensions || !ref || !ref.current) return;
+
     navBottom - scrollPosition >= ref.current.offsetTop
       ? setIsTop(false)
       : setIsTop(true);
@@ -50,7 +51,6 @@ const Navigation = React.forwardRef((props, ref) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="navbar-nav mr-auto">
-          {/* ✅ Blog Link */}
           <Nav.Link as={Link} to="/blog" className="nav-item lead">
             Blog
           </Nav.Link>
@@ -85,15 +85,4 @@ const Navigation = React.forwardRef((props, ref) => {
           {skills.show && (
             <NavLink
               className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
-              Skills
-            </NavLink>
-          )}
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  );
-});
-
-export default Navigation;
+              h
