@@ -24,7 +24,7 @@ const BlogCard = ({ slug, title, description }) => {
     <div className="m-5">
       <div className="row">
         <div className="col-4 col-lg-12">
-          {/* <img src={image} className="card-img" alt="..." /> */}
+          {/* Optional: insert image or thumbnail here */}
         </div>
         <div className="col-8 col-lg-12">
           <div>
