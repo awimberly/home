@@ -44,6 +44,4 @@ const refactoringMe = new BlogBuilder({
 
 bloglist.push(refactoringMe);
 
-bloglist.push(refactoringMe);
-
 export default bloglist;
