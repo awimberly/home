@@ -4,7 +4,6 @@ import useResizeObserver from "../hooks/useResizeObserver";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
-import { NavLink } from "./home/migration";
 import { Link } from "react-router-dom";
 
 const Navigation = React.forwardRef((props, ref) => {
@@ -15,23 +14,22 @@ const Navigation = React.forwardRef((props, ref) => {
   const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
 
   useScrollPosition(
-    ({ prevPos, currPos }) => {
-      if (!navbarDimensions || !ref || !ref.current) return;
-
-      currPos.y + ref.current.offsetTop - navbarDimensions.bottom > 5
-        ? setIsTop(true)
-        : setIsTop(false);
-      setScrollPosition(currPos.y);
+    ({ currPos }) => {
+      if (ref?.current && navbarDimensions?.bottom != null) {
+        const offset =
+          currPos.y + ref.current.offsetTop - navbarDimensions.bottom;
+        setIsTop(offset > 5);
+        setScrollPosition(currPos.y);
+      }
     },
     [navBottom]
   );
 
   React.useEffect(() => {
-    if (!navbarDimensions || !ref || !ref.current) return;
-
-    navBottom - scrollPosition >= ref.current.offsetTop
-      ? setIsTop(false)
-      : setIsTop(true);
+    if (ref?.current && navbarDimensions?.bottom != null) {
+      const offset = ref.current.offsetTop;
+      setIsTop(!(navBottom - scrollPosition >= offset));
+    }
   }, [navBottom, navbarDimensions, ref, scrollPosition]);
 
   return (
@@ -56,39 +54,30 @@ const Navigation = React.forwardRef((props, ref) => {
           </Nav.Link>
 
           {repos.show && (
-            <NavLink
-              href={process.env.PUBLIC_URL + "/#projects"}
-              className="nav-item lead"
-            >
+            <Nav.Link as={Link} to="/#projects" className="nav-item lead">
               Projects
-            </NavLink>
+            </Nav.Link>
           )}
 
-          <NavLink
-            className="nav-item lead"
+          <Nav.Link
             href={about.resume}
             target="_self"
             rel="noreferrer noopener"
+            className="nav-item lead"
           >
             Resume
-          </NavLink>
+          </Nav.Link>
 
           {about.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#aboutme"}
-            >
+            <Nav.Link as={Link} to="/#aboutme" className="nav-item lead">
               About
-            </NavLink>
+            </Nav.Link>
           )}
 
           {skills.show && (
-            <NavLink
-              className="nav-item lead"
-              href={process.env.PUBLIC_URL + "/#skills"}
-            >
+            <Nav.Link as={Link} to="/#skills" className="nav-item lead">
               Skills
-            </NavLink>
+            </Nav.Link>
           )}
         </Nav>
       </Navbar.Collapse>
