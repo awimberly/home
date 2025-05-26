@@ -28,9 +28,11 @@ const refactoringMe = new BlogBuilder({
   .addParagraph(
     "After moping around, I decided to do something about it. Being jaded is a waste of time. It’s far more constructive to believe in myself — and believe that everything will work out for the best."
   )
-  .addQuote(
-    "Anything is possible if you just believe. But if you want to start believing, start with yourself.",
-    "Dulara Perera"
+  .addParagraph(
+    `<blockquote>
+      “Anything is possible if you just believe. But if you want to start believing, start with yourself.”
+      <br />— Dulara Perera
+    </blockquote>`
   )
   .addHeading("Refactoring Me")
   .addParagraph(
