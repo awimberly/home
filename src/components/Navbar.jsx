@@ -1,84 +1,67 @@
 import React, { useState } from "react";
-import { useScrollPosition } from "../hooks/useScrollPosition";
-import useResizeObserver from "../hooks/useResizeObserver";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { Link } from "react-router-dom";
+import {
+  mainBody,
+  repos,
+  about,
+  skills,
+  getInTouch,
+  experiences,
+  navBar,
+} from "../editable-stuff/config.js";
 
 const Navigation = React.forwardRef((props, ref) => {
-  const [isTop, setIsTop] = useState(true);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const navbarMenuRef = React.useRef();
-  const navbarDimensions = useResizeObserver(navbarMenuRef);
-  const navBottom = navbarDimensions ? navbarDimensions.bottom : 0;
-
-  useScrollPosition(
-    ({ currPos }) => {
-      if (ref?.current && navbarDimensions?.bottom != null) {
-        const offset =
-          currPos.y + ref.current.offsetTop - navbarDimensions.bottom;
-        setIsTop(offset > 5);
-        setScrollPosition(currPos.y);
-      }
-    },
-    [navBottom]
-  );
-
-  React.useEffect(() => {
-    if (ref?.current && navbarDimensions?.bottom != null) {
-      const offset = ref.current.offsetTop;
-      setIsTop(!(navBottom - scrollPosition >= offset));
-    }
-  }, [navBottom, navbarDimensions, ref, scrollPosition]);
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <Navbar
-      ref={navbarMenuRef}
-      className={`px-3 fixed-top ${
-        !isTop ? "navbar-white" : "navbar-transparent"
-      }`}
+      collapseOnSelect
+      expanded={expanded}
       expand="lg"
+      fixed="top"
+      className="nav-theme justify-content-between"
     >
-      <Navbar.Brand
-        className="navbar-brand"
-        href={process.env.PUBLIC_URL + "/#home"}
-      >
-        {`<${mainBody.firstName} />`}
+      <Navbar.Brand className="nav-name" href="#home">
+        {mainBody.firstName}
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" className="toggler" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="navbar-nav mr-auto">
-          <Nav.Link as={Link} to="/blog" className="nav-item lead">
-            Blog
-          </Nav.Link>
-
-          {repos.show && (
-            <Nav.Link as={Link} to="/#projects" className="nav-item lead">
-              Projects
-            </Nav.Link>
-          )}
-
-          <Nav.Link
-            href={about.resume}
-            target="_self"
-            rel="noreferrer noopener"
-            className="nav-item lead"
-          >
-            Resume
-          </Nav.Link>
-
+      <Navbar.Toggle
+        aria-controls="responsive-navbar-nav"
+        onClick={() => setExpanded((prev) => !prev)}
+      />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ml-auto text-center">
           {about.show && (
-            <Nav.Link as={Link} to="/#aboutme" className="nav-item lead">
+            <Nav.Link href="#aboutme" onClick={() => setExpanded(false)}>
               About
             </Nav.Link>
           )}
-
+          {experiences.show && (
+            <Nav.Link href="#experience" onClick={() => setExpanded(false)}>
+              Experience
+            </Nav.Link>
+          )}
+          {repos.show && (
+            <Nav.Link href="#projects" onClick={() => setExpanded(false)}>
+              Projects
+            </Nav.Link>
+          )}
           {skills.show && (
-            <Nav.Link as={Link} to="/#skills" className="nav-item lead">
+            <Nav.Link href="#skills" onClick={() => setExpanded(false)}>
               Skills
             </Nav.Link>
           )}
+          <Nav.Link href="#contact" onClick={() => setExpanded(false)}>
+            Contact
+          </Nav.Link>
+          <Link
+            to="/blog"
+            className="nav-link"
+            onClick={() => setExpanded(false)}
+          >
+            Blog
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
