@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import {
   navBar,
   mainBody,
@@ -32,29 +32,39 @@ const Home = React.forwardRef((props, ref) => {
         ref={ref}
       />
       {about.show && (
-        <AboutMe
-          heading={about.heading}
-          message={about.message}
-          link={about.imageLink}
-          imgSize={about.imageSize}
-          resume={about.resume}
-        />
+        <section id="aboutme">
+          <AboutMe
+            heading={about.heading}
+            message={about.message}
+            link={about.imageLink}
+            imgSize={about.imageSize}
+            resume={about.resume}
+          />
+        </section>
       )}
-      {experiences.show && <Experience experiences={experiences} />}
+      {experiences.show && (
+        <section id="experience">
+          <Experience experiences={experiences} />
+        </section>
+      )}
       {repos.show && (
-        <Project
-          heading={repos.heading}
-          username={repos.gitHubUsername}
-          length={repos.reposLength}
-          specfic={repos.specificRepos}
-        />
+        <section id="projects">
+          <Project
+            heading={repos.heading}
+            username={repos.gitHubUsername}
+            length={repos.reposLength}
+            specfic={repos.specificRepos}
+          />
+        </section>
       )}
       {skills.show && (
-        <Skills
-          heading={skills.heading}
-          hardSkills={skills.hardSkills}
-          softSkills={skills.softSkills}
-        />
+        <section id="skills">
+          <Skills
+            heading={skills.heading}
+            hardSkills={skills.hardSkills}
+            softSkills={skills.softSkills}
+          />
+        </section>
       )}
     </>
   );
@@ -73,11 +83,13 @@ const App = () => {
       </Routes>
       <Footer>
         {getInTouch.show && (
-          <GetInTouch
-            heading={getInTouch.heading}
-            message={getInTouch.message}
-            email={getInTouch.email}
-          />
+          <section id="contact">
+            <GetInTouch
+              heading={getInTouch.heading}
+              message={getInTouch.message}
+              email={getInTouch.email}
+            />
+          </section>
         )}
       </Footer>
     </HashRouter>
