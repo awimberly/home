@@ -28,27 +28,22 @@ const Project = ({ heading, username, length, specfic }) => {
 
   const fetchRepos = useCallback(async () => {
     let repoList = [];
+
     try {
-      // getting all repos
-      const response = await axios.get(allReposAPI);
-      // slicing to the length
-      repoList = [...response.data.slice(0, length)];
-      // adding specified repos
-      try {
-        for (let repoName of specfic) {
-          const response = await axios.get(`${specficReposAPI}/${repoName}`);
+      if (specfic.length) {
+        for (let i = 0; i < specfic.length; i++) {
+          const response = await axios.get(`${specficReposAPI}/${specfic[i]}`);
           repoList.push(response.data);
         }
-      } catch (error) {
-        console.error(error.message);
+      } else {
+        const response = await axios.get(allReposAPI);
+        repoList = response.data.slice(0, length);
       }
-      // setting projectArray
-      // TODO: remove the duplication.
-      setProjectsArray(repoList);
     } catch (error) {
-      console.error(error.message);
+      console.error(error);
     }
-  }, [allReposAPI, length, specfic, specficReposAPI]);
+    setProjectsArray(repoList);
+  }, [allReposAPI, specficReposAPI, length, specfic]);
 
   useEffect(() => {
     fetchRepos();
@@ -58,22 +53,34 @@ const Project = ({ heading, username, length, specfic }) => {
     <Jumbotron fluid id="projects" className="bg-light m-0">
       <Container className="">
         <h2 className="display-4 pb-5 text-center">{heading}</h2>
+        <p className="text-muted mb-4 text-center">
+          These are my current focus projects. You can find more on{" "}
+          <a
+            href="https://github.com/awimberly?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          .
+        </p>
+
         <Row>
           {projectsArray.length
             ? projectsArray.map((project, index) => (
-              <ProjectCard
-                key={`project-card-${index}`}
-                id={`project-card-${index}`}
-                value={project}
-              />
-            ))
+                <ProjectCard
+                  key={`project-card-${index}`}
+                  id={`project-card-${index}`}
+                  value={project}
+                />
+              ))
             : dummyProjectsArr.map((project, index) => (
-              <ProjectCard
-                key={`dummy-${index}`}
-                id={`dummy-${index}`}
-                value={project}
-              />
-            ))}
+                <ProjectCard
+                  key={`dummy-${index}`}
+                  id={`dummy-${index}`}
+                  value={project}
+                />
+              ))}
         </Row>
       </Container>
     </Jumbotron>

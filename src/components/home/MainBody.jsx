@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Typist from 'react-typist-component';
+import Typist from "react-typist-component";
 import { Jumbotron } from "./migration";
 
 const MainBody = React.forwardRef(
@@ -21,10 +21,28 @@ const MainBody = React.forwardRef(
             {title}
           </h1>
           <Typist>
-            <div className="lead typist">
-              {message}
-            </div>
+            <div className="lead typist">{message}</div>
+            <p className="mt-3">
+              Try my{" "}
+              <a
+                href="https://awimberly.github.io/snake-game/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Snake Game
+              </a>{" "}
+              or check out the{" "}
+              <a
+                href="https://github.com/awimberly/snake-game"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                repo
+              </a>
+              .
+            </p>
           </Typist>
+
           <div className="p-5">
             {icons.map((icon, index) => (
               <a
