@@ -50,7 +50,7 @@ const about = {
   imageLink: "", //require("../editable-stuff/selfportrait.png"),
   imageSize: 350,
   message:
-    "I'm a full stack developer with deep experience in .NET, JavaScript, SQL Server, and a long track record of building everything from enterprise systems to internal tools. I enjoy solving tough problems, learning new technologies, and helping teams deliver solid, scalable software. I'm currently looking for new opportunities where I can contribute, grow, and build things that matter.",
+    "I'm a software developer with deep experience in .NET, JavaScript, SQL Server, and a long track record of building everything from enterprise systems to internal tools. I enjoy solving tough problems, learning new technologies, and helping teams deliver solid, scalable software. I'm currently looking for new opportunities where I can contribute, grow, and build things that matter.",
   resume:
     "https://docs.google.com/document/d/e/2PACX-1vRITxIro4empF_2Du4T7tp9m954I7ZwQbhE_WGbknZlgekWiqn7BsKAvRruMpw7kg/pub",
 };
