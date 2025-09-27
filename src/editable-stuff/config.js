@@ -51,8 +51,7 @@ const about = {
   imageSize: 350,
   message:
     "I'm a software developer with deep experience in .NET, JavaScript, SQL Server, and a long track record of building everything from enterprise systems to internal tools. I enjoy solving tough problems, learning new technologies, and helping teams deliver solid, scalable software. I'm currently looking for new opportunities where I can contribute, grow, and build things that matter.",
-  resume:
-    "https://docs.google.com/document/d/e/2PACX-1vQEMQURYp5m7UDVJrBPo2MCJjjDeSHi9_wqpBIGzn8sJrLUuY_nwIjj1QlzeL9Vjg/pub",
+  resume: require("../editable-stuff/resume.pdf"),
 };
 
 // PROJECTS SECTION
